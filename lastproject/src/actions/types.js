@@ -1,0 +1,6 @@
+export const FETCH_MOVIE='FETCH_MOVIE';
+export const FETCH_DETAIL='FETCH_DETAIL';
+export const FETCH_NEWS='FETCH_NEWS';
+export const FETCH_WEEKLY='FETCH_WEEKLY';
+export const FETCH_MONTHLY='FETCH_MONTHLY';
+export const FETCH_YEARLY='FETCH_YEARLY';

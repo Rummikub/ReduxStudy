@@ -1,25 +1,26 @@
 import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import MovieMain2 from './components/MovieMain2'
+import store from './store/store'
+import {Provider} from "react-redux"
+import {BrowserRouter as Router,Route,Switch} from "react-router-dom"
+import MovieDetail2 from "./components/MovieDetail2"
+import MovieNews from "./components/MovieNews"
+import MovieDetail from "./components/MovieDetail";
+
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+   <Router>
+      <Provider store={store}>
+        <div className={"container"}>
+          <Switch>
+            <Route exact path={"/"} component={MovieMain2}/>
+            <Route path={"/movie_detail/:no"} component={MovieDetail2}/>
+            <Route path={"/movie_news"} component={MovieNews}/>
+          </Switch>
+        </div>
+      </Provider>
+   </Router>
   );
 }
 
